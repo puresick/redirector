@@ -10,6 +10,14 @@
 		"default_icon": "assets/icon-48.png",
 		"default_title": "redirector"
 	},
+	"permissions": [
+		"storage"
+	],
+	"applications": {
+		"gecko": {
+			"id": "redirector@hnnng.dev"
+		}
+	},
 	"background": {
 		"scripts": ["background.js"]
 	},
