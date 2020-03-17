@@ -1,10 +1,10 @@
 {
 	"manifest_version": 2,
 	"name": "redirector",
-	"version": "0.1",
+	"version": "0.1.1",
 	"description": "Redirects youtube video links to invidio.us",
 	"icons": {
-		"48": "assets/icon-48.png"
+		"48": "assets/icon-48-normal.png"
 	},
 	"browser_action": {
 		"default_icon": "assets/icon-48-normal.png",
