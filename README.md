@@ -31,6 +31,5 @@ article:
 Right now, redirector is being far from feature complete. There are some obvious
 features I am planning to add in the future aiming for a 1.0 stable release:
 
-- De-/activating via add-on icon in browser toolbar
 - Supporting all possible youtube locales (currently only us and de)
 - Being able to redirect to other invidio.us instances
