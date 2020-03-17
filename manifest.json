@@ -7,7 +7,7 @@
 		"48": "assets/icon-48.png"
 	},
 	"browser_action": {
-		"default_icon": "assets/icon-48.png",
+		"default_icon": "assets/icon-48-normal.png",
 		"default_title": "redirector"
 	},
 	"permissions": [
@@ -15,7 +15,7 @@
 	],
 	"applications": {
 		"gecko": {
-			"id": "redirector@hnnng.dev"
+			"id": "redirector-addon@hnnng.dev"
 		}
 	},
 	"background": {
