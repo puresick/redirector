@@ -4,11 +4,24 @@
 	"version": "0.1.2",
 	"description": "Redirects youtube video links to invidio.us",
 	"icons": {
-		"48": "assets/icon-48-normal.png"
+		"48": "assets/icon-48-dark.png",
+		"96": "assets/icon-48-dark.png"
 	},
 	"browser_action": {
-		"default_icon": "assets/icon-48-normal.png",
-		"default_title": "redirector"
+		"browser_style": true,
+		"default_title": "redirector",
+		"theme_icons": [
+			{
+				"dark": "assets/icon-48-dark.png",
+				"light": "assets/icon-48-light.png",
+				"size": 16
+			},
+			{
+				"dark": "assets/icon-48-dark.png",
+				"light": "assets/icon-48-light.png",
+				"size": 32
+			}
+		]
 	},
 	"permissions": [
 		"storage"
@@ -22,6 +35,10 @@
 		"scripts": [
 			"src/background.js"
 		]
+	},
+	"options_ui": {
+		"page": "src/options.html",
+		"browser_style": true
 	},
 	"content_scripts": [
 		{
