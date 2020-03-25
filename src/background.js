@@ -45,17 +45,6 @@ const handleToolbarIcon = () => {
 		: iconPaths.dark
 }
 
-const redirectToInvidious = () => {
-	const { host, pathname, search } = window.location
-	console.dir({ pathname, search })
-	if (search === "") {
-		window.location.replace(`https://invidio.us/`)
-	} else {
-		window.location.replace(`https://invidio.us${pathname}${search}`)
-	}
-	// window.location = `https://invidio.us${pathname}${search}`
-}
-
 browser.contextMenus.create({
 	id: "redirect-to-invidious",
 	title: "watch on invidious"
