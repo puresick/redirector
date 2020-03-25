@@ -44,3 +44,47 @@ const handleToolbarIcon = () => {
 		? iconPaths.light
 		: iconPaths.dark
 }
+
+const redirectToInvidious = () => {
+	const { host, pathname, search } = window.location
+	console.dir({ pathname, search })
+	if (search === "") {
+		window.location.replace(`https://invidio.us/`)
+	} else {
+		window.location.replace(`https://invidio.us${pathname}${search}`)
+	}
+	// window.location = `https://invidio.us${pathname}${search}`
+}
+
+browser.contextMenus.create({
+	id: "redirect-to-invidious",
+	title: "watch on invidious"
+})
+
+browser.contextMenus.onClicked.addListener(async (info, tab) => {
+	const { url } = tab
+	const videoIdString = "watch?v="
+	const userIdString = "user/"
+	const channelIdString = "channel/"
+
+	let path = ""
+
+	if (url.includes(videoIdString)) {
+		const videoId = url.split(videoIdString)[1]
+		path = `${videoIdString}${videoId}`
+	}
+
+	if (url.includes(userIdString)) {
+		const videoId = url.split(userIdString)[1]
+		path = `${userIdString}${videoId}`
+	}
+
+	if (url.includes(channelIdString)) {
+		const videoId = url.split(channelIdString)[1]
+		path = `${channelIdString}${videoId}`
+	}
+
+	browser.tabs.update(tab.id, {
+		url: `https://invidio.us/${path}`
+	})
+})
