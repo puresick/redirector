@@ -6,8 +6,9 @@ const iconPaths = {
 
 browser.runtime.onInstalled.addListener(async event => {
 	const active = true
+	const instance = "https://invidio.us"
 
-	await browser.storage.local.set({ active })
+	await browser.storage.local.set({ active, instance })
 })
 
 browser.runtime.onStartup.addListener(async event => {
@@ -51,6 +52,7 @@ browser.contextMenus.create({
 })
 
 browser.contextMenus.onClicked.addListener(async (info, tab) => {
+	const { instance } = await browser.storage.local.get()
 	const { url } = tab
 	const videoIdString = "watch?v="
 	const userIdString = "user/"
@@ -74,6 +76,6 @@ browser.contextMenus.onClicked.addListener(async (info, tab) => {
 	}
 
 	browser.tabs.update(tab.id, {
-		url: `https://invidio.us/${path}`
+		url: `${instance}/${path}`
 	})
 })

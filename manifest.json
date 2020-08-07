@@ -33,6 +33,11 @@
 			"id": "redirector-addon@hnnng.dev"
 		}
 	},
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "redirector-addon@hnnng.dev"
+		}
+	},
 	"background": {
 		"scripts": [
 			"src/background.js"
